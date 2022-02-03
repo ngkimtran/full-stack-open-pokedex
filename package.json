@@ -10,8 +10,7 @@
     "eslint": "eslint './**/*.{js,jsx}'",
     "build": "webpack --mode production",
     "cypress:open": "cypress open",
-    "test:e2e": "cypress run",
-    "heroku-postbuild": "webpack --config webpack.prod.js"
+    "test:e2e": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -58,5 +57,8 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "engines": {
+    "node": "14.18.3"
   }
 }
