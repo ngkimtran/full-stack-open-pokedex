@@ -33,3 +33,4 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: 'protected-oasis-46554'
           heroku_email: 'ngockimtranle@gmail.com'
+          healthcheck: 'https://protected-oasis-46554.herokuapp.com/health'
