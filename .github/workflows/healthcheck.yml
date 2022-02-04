@@ -1,0 +1,22 @@
+name: Periodic healthcheck
+
+on:
+  push:
+    branches:
+      - master
+  # schedule:
+  #   # * is a special character in YAML so you have to quote this string
+  #   - cron:  '30 5,17 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check-action@v2
+        with:
+          url: 'https://protected-oasis-46554.herokuapp.com'
+          follow-redirect: false
+          max-attempts: 3
+          retry-delay: 5s
+          retry-all: false
